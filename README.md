@@ -34,101 +34,95 @@ Editar
 
 ### ▶️ Passo a passo
 
-1. Clone o repositório:
+#### 1. Clone o repositório:
 
-
+```bash
 git clone https://github.com/ArthurBritoo/Projeto-Flyfood.git
 cd Projeto-Flyfood
-Execute o script:
-
-bash
-Copiar
-Editar
+```
+#### Execute o script:
+```bash
 python flyfood.py
-Quando solicitado, digite ou cole a matriz de entrada:
-
-css
-Copiar
-Editar
+```
+#### Quando solicitado, digite ou cole a matriz de entrada:
+```code
 4 5
 0 0 0 0 D
 0 A 0 0 0
 0 0 0 0 C
 R 0 B 0 0
-A saída será a ordem ótima dos pontos de entrega, por exemplo:
+```
+#### A saída será a ordem ótima dos pontos de entrega, por exemplo:
 
-css
-Copiar
-Editar
+```code
 A D C B
+```
 ## 🔧 Detalhes Técnicos
-A matriz é lida da entrada padrão (input manual no terminal).
+- A matriz é lida da entrada padrão (input manual no terminal).
 
-O ponto de origem e retorno é sempre marcado com R.
+- O ponto de origem e retorno é sempre marcado com R.
 
-Os pontos de entrega são letras maiúsculas (A, B, C...).
+- Os pontos de entrega são letras maiúsculas (A, B, C...).
 
-A movimentação é permitida apenas nas direções horizontal e vertical.
+- A movimentação é permitida apenas nas direções horizontal e vertical.
 
-A distância entre dois pontos é calculada com base na distância de Manhattan.
+- A distância entre dois pontos é calculada com base na distância de Manhattan.
 
-Permutações são geradas manualmente, sem uso de bibliotecas como itertools.
+- Permutações são geradas manualmente, sem uso de bibliotecas como itertools.
 
 ### 🧪 Exemplo de Entrada
-css
-Copiar
-Editar
+```code
 4 5
 0 0 0 0 D
 0 A 0 0 0
 0 0 0 0 C
 R 0 B 0 0
+```
 ### ✅ Exemplo de Saída
-css
-Copiar
-Editar
+```code
 A D C B
-🔍 Estratégia
+```
+## 🔍 Estratégia
 Este projeto utiliza um algoritmo exato de força bruta, que testa todas as possíveis ordens de entrega e retorna a que possui o menor custo total de deslocamento. É uma abordagem viável apenas para instâncias pequenas (até 6 ou 7 entregas), devido à complexidade exponencial (O(n!)).
 
 ## 🚧 Trabalhos Futuros
-Implementar heurísticas como:
+- Implementar heurísticas como:
 
-Vizinho Mais Próximo
+  - Vizinho Mais Próximo
 
-2-opt
+  - 2-opt
 
-Comparar desempenho com a força bruta
+- Comparar desempenho com a força bruta
 
-Permitir leitura direta de arquivos .txt
+- Permitir leitura direta de arquivos .txt
 
-Suportar múltiplos drones
+- Suportar múltiplos drones
 
-Adicionar interface visual ou simulação gráfica
+- Adicionar interface visual ou simulação gráfica
 
 ## 📚 Base Teórica
-Problema do Caixeiro Viajante (TSP)
+- Problema do Caixeiro Viajante (TSP)
 
-Distância de Manhattan
+- Distância de Manhattan
 
-Complexidade Computacional
+- Complexidade Computacional
 
-Algoritmos de força bruta
+- Algoritmos de força bruta
 
-Heurísticas para otimização de rotas
+- Heurísticas para otimização de rotas
 
 ## 👥 Autores
 Projeto desenvolvido por estudantes do Bacharelado em Sistemas de Informação – UFRPE para a disciplina Projeto Integrador de Sistemas de Informação 2 (PISI2):
 
-Arthur de Brito Lima
+- Arthur de Brito Lima
 
-Arthur Ferreira Barbosa
+- Arthur Ferreira Barbosa
 
-Carolinne Amorim
+- Carolinne Amorim
 
-Gabriel Sabino Pinho Leite
+- Gabriel Sabino Pinho Leite
 
-Gustavo Macena
+- Gustavo Macena
 
 ## 📜 Licença
 Este projeto é de caráter acadêmico e está disponível para uso educacional. Para uso comercial ou profissional, entre em contato com os autores.
@@ -136,13 +130,8 @@ Este projeto é de caráter acadêmico e está disponível para uso educacional.
 Repositório no GitHub:
 🔗 https://github.com/ArthurBritoo/Projeto-Flyfood
 
-yaml
-Copiar
-Editar
-
 ---
 
-Se quiser posso criar também um `entrada_exemplo.txt` com a matriz usada no exemplo para incluir no repositório. Deseja isso também?
 
 
 
