@@ -13,16 +13,13 @@ Este projeto propõe uma abordagem inspirada no **Problema do Caixeiro Viajante 
 Desenvolver um algoritmo que determine a sequência ideal de visitas aos pontos de entrega por um drone, partindo e retornando a um ponto fixo (`R`), minimizando o custo total em **dronômetros** (unidade de distância com base na distância de Manhattan).
 
 ## 🗂️ Estrutura do Projeto
-
+<pre lang="markdown"> 
 Projeto-Flyfood/
 ├── flyfood.py # Código principal com algoritmo de força bruta
 ├── entrada_exemplo.txt # (Opcional) Exemplo de entrada
 ├── relatorios/ # Documentos e relatórios do projeto
 └── README.md # Este arquivo
-
-markdown
-Copiar
-Editar
+</pre>
 
 ## 🖥️ Como executar
 
