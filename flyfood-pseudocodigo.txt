@@ -1,0 +1,114 @@
+definir ler_matriz_flyfood():
+    
+    dimensões da matriz = entrada
+    número de linhas = ao inteiro da dimensões da matriz[0]
+
+    matriz = []
+    
+    para _ no alcance de número de linhas:
+        linha da matriz = entrada
+        adicionar à matriz: linha da matriz
+    retorne matriz
+
+definir encontrar_pontos(matriz):
+    
+    pontos = {}
+    numero de linhas = tamanho da matriz
+    
+    se numero de linhas == 0, então:
+        retorne pontos
+    numero de colunas = tamanho da matriz[0]
+
+    para i no alcance de numero de linhas:
+        para j no alcance de numero de colunas:
+            valor = matriz[i][j]
+            se valor != "0":
+                pontos[valor] = (i, j)
+    retorne pontos
+
+definir distancia_manhattan(p1, p2):
+    diferença entre as linhas = p1[0] - p2[0]
+   
+    se a diferença entre as linhas < 0, então:
+        diferença absoluta de linhas = -diferença entre as linhas
+    se não, então:
+        diferença absoluta de linhas = diferença entre as linhas
+
+    diferença entre as colunas = p1[1] - p2[1]
+   
+    se a diferença entre as colunas < 0, então:
+        diferença absoluta de colunas = -diferença entre as colunas
+    se não, então:
+        diferença absoluta de colunas = diferença entre as colunas
+    retorne diferença absoluta de linhas + diferença absoluta de colunas
+
+definir gerar_permutacoes(lista):
+    se tamanho de lista == 0, então:
+        retorne lista contendo lista vazia
+    se tamanho de lista == 1, então:
+        retorne lista contendo cópia de lista
+
+    todas_as_permutacões = []
+    
+    para i no alcance de tamanho de lista:
+        elemento_atual = lista[i]
+        lista_restante = []
+        
+        para j no alcance de tamanho de lista:
+            se j != i, então:
+                adicionar à lista_restante: lista[j]
+        permutações_dos_restantes = gerar_permutacoes(lista_restante)
+        para cada perm em permutações_dos_restantes:
+            nova_permutação = [elemento_atual]
+            para cada item em perm:
+                adicionar à nova_permutação: item
+            adicionar à todas_as_permutacões: nova_permutação
+    
+    retorne todas_as_permutacões
+
+definir resolver_flyfood_forca_bruta():
+    matriz = ler_matriz_flyfood()
+    coordenadas = encontrar_pontos(matriz)
+    
+    se 'R' não está em coordenadas, então:
+        retorne "Ponto R não encontrado"
+   
+    origem = coordenadas['R']
+
+    pontos_entrega = []
+    
+    para cada nome em chaves de coordenadas:
+        se nome != 'R', então:
+            adicionar à pontos_entrega: nome
+    
+    se tamanho de pontos_entrega == 0, então:
+        retorne ""
+
+    rotas = gerar_permutacoes(pontos_entrega)
+    menor_custo = infinito
+    melhor_rota = []
+
+    para cada rota em rotas:
+        custo_atual = 0
+        ponto_anterior = origem
+        
+        para cada nome_ponto em rota:
+            ponto_atual = coordenadas[nome_ponto]
+            custo_atual = custo_atual + distancia_manhattan(ponto_anterior, ponto_atual)
+            ponto_anterior = ponto_atual
+        
+        custo_atual = custo_atual + distancia_manhattan(ponto_anterior, origem)
+        
+        se custo_atual < menor_custo, então:
+            menor_custo = custo_atual
+            melhor_rota = rota
+
+    se encontrou melhor_rota 
+        resultado_str = concatenar elementos de melhor_rota separados por espaço
+        retorne resultado_str
+
+// bloco principal
+
+se programa principal, então:
+    rota = resolver_flyfood_forca_bruta()
+    imprimir rota
