@@ -36,7 +36,7 @@ Editar
 
 1. Clone o repositório:
 
-```bash
+
 git clone https://github.com/ArthurBritoo/Projeto-Flyfood.git
 cd Projeto-Flyfood
 Execute o script:
@@ -61,7 +61,7 @@ css
 Copiar
 Editar
 A D C B
-🔧 Detalhes Técnicos
+## 🔧 Detalhes Técnicos
 A matriz é lida da entrada padrão (input manual no terminal).
 
 O ponto de origem e retorno é sempre marcado com R.
@@ -74,7 +74,7 @@ A distância entre dois pontos é calculada com base na distância de Manhattan.
 
 Permutações são geradas manualmente, sem uso de bibliotecas como itertools.
 
-🧪 Exemplo de Entrada
+### 🧪 Exemplo de Entrada
 css
 Copiar
 Editar
@@ -83,7 +83,7 @@ Editar
 0 A 0 0 0
 0 0 0 0 C
 R 0 B 0 0
-✅ Exemplo de Saída
+### ✅ Exemplo de Saída
 css
 Copiar
 Editar
@@ -91,7 +91,7 @@ A D C B
 🔍 Estratégia
 Este projeto utiliza um algoritmo exato de força bruta, que testa todas as possíveis ordens de entrega e retorna a que possui o menor custo total de deslocamento. É uma abordagem viável apenas para instâncias pequenas (até 6 ou 7 entregas), devido à complexidade exponencial (O(n!)).
 
-🚧 Trabalhos Futuros
+## 🚧 Trabalhos Futuros
 Implementar heurísticas como:
 
 Vizinho Mais Próximo
@@ -106,7 +106,7 @@ Suportar múltiplos drones
 
 Adicionar interface visual ou simulação gráfica
 
-📚 Base Teórica
+## 📚 Base Teórica
 Problema do Caixeiro Viajante (TSP)
 
 Distância de Manhattan
@@ -117,7 +117,7 @@ Algoritmos de força bruta
 
 Heurísticas para otimização de rotas
 
-👥 Autores
+## 👥 Autores
 Projeto desenvolvido por estudantes do Bacharelado em Sistemas de Informação – UFRPE para a disciplina Projeto Integrador de Sistemas de Informação 2 (PISI2):
 
 Arthur de Brito Lima
@@ -130,7 +130,7 @@ Gabriel Sabino Pinho Leite
 
 Gustavo Macena
 
-📜 Licença
+## 📜 Licença
 Este projeto é de caráter acadêmico e está disponível para uso educacional. Para uso comercial ou profissional, entre em contato com os autores.
 
 Repositório no GitHub:
