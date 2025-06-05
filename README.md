@@ -16,8 +16,7 @@ Desenvolver um algoritmo que determine a sequência ideal de visitas aos pontos 
 <pre lang="markdown"> 
 Projeto-Flyfood/
 ├── flyfood.py # Código principal com algoritmo de força bruta
-├── entrada_exemplo.txt # (Opcional) Exemplo de entrada
-├── relatorios/ # Documentos e relatórios do projeto
+├── flyfood-pseudocodigo.txt # Pseudo-codigo do Projeto
 └── README.md # Este arquivo
 </pre>
 
