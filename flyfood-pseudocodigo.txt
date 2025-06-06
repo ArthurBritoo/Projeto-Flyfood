@@ -1,46 +1,47 @@
 definir ler_matriz_flyfood():
     
-    dimensões da matriz = entrada
-    número de linhas = ao inteiro da dimensões da matriz[0]
+    dimensoes_da_matriz = entrada
+    numero_de_linhas = ao inteiro da dimensoes_da_matriz[0]
 
     matriz = []
     
-    para _ no alcance de número de linhas:
-        linha da matriz = entrada
-        adicionar à matriz: linha da matriz
+    para _ no alcance de numero_de_linhas:
+        linha_da_matriz = entrada
+        adicionar à matriz: linha_da_matriz
     retorne matriz
 
 definir encontrar_pontos(matriz):
     
     pontos = {}
-    numero de linhas = tamanho da matriz
+    numero_de_linhas = tamanho da matriz
     
-    se numero de linhas == 0, então:
+    se numero_de_linhas == 0, então:
         retorne pontos
-    numero de colunas = tamanho da matriz[0]
+    numero_de_colunas = tamanho da matriz[0]
 
-    para i no alcance de numero de linhas:
-        para j no alcance de numero de colunas:
+    para i no alcance de numero_de_linhas:
+        para j no alcance de numero_de_colunas:
             valor = matriz[i][j]
             se valor != "0":
                 pontos[valor] = (i, j)
     retorne pontos
 
 definir distancia_manhattan(p1, p2):
-    diferença entre as linhas = p1[0] - p2[0]
-   
-    se a diferença entre as linhas < 0, então:
-        diferença absoluta de linhas = -diferença entre as linhas
+    
+    diferenca_entre_as_linhas = p1[0] - p2[0]
+    se diferenca_entre_as_linhas < 0, então:
+        diferenca_absoluta_de_linhas = -diferenca_entre_as_linhas
     se não, então:
-        diferença absoluta de linhas = diferença entre as linhas
+        diferenca_absoluta_de_linhas = diferenca_entre_as_linhas
 
-    diferença entre as colunas = p1[1] - p2[1]
-   
-    se a diferença entre as colunas < 0, então:
-        diferença absoluta de colunas = -diferença entre as colunas
+    diferenca_entre_as_colunas = p1[1] - p2[1]
+    se diferenca_entre_as_colunas < 0, então:
+        diferenca_absoluta_de_colunas = -diferenca_entre_as_colunas
     se não, então:
-        diferença absoluta de colunas = diferença entre as colunas
-    retorne diferença absoluta de linhas + diferença absoluta de colunas
+        diferenca_absoluta_de_colunas = diferenca_entre_as_colunas
+
+    retorne diferenca_absoluta_de_linhas + diferenca_absoluta_de_colunas
+
 
 definir gerar_permutacoes(lista):
     se tamanho de lista == 0, então:
