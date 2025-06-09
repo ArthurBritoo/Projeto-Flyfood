@@ -114,7 +114,7 @@ Projeto desenvolvido por estudantes do Bacharelado em Sistemas de Informação �
 
 - Arthur Ferreira Barbosa
 
-- Carolinne Amorim
+- Carolinne Celestino Corrêa de Amorim
 
 - Gabriel Sabino Pinho Leite
 
