@@ -118,7 +118,7 @@ Projeto desenvolvido por estudantes do Bacharelado em Sistemas de Informação �
 
 - Gabriel Sabino Pinho Leite
 
-- Gustavo Macena
+- Gustavo Macena Pagnossin
 
 ## 📜 Licença
 Este projeto é de caráter acadêmico e está disponível para uso educacional. Para uso comercial ou profissional, entre em contato com os autores.
