@@ -1,115 +1,103 @@
-definir ler_matriz_flyfood():
-    
-    dimensoes_da_matriz = entrada
-    numero_de_linhas = ao inteiro da dimensoes_da_matriz[0]
+# Assuma que tudo que está escrito na linha após o símbolo "#" é um comentário explicando o que está acontecendo
 
-    matriz = []
-    
-    para _ no alcance de numero_de_linhas:
-        linha_da_matriz = entrada
-        adicionar à matriz: linha_da_matriz
+função ler matriz:
+    matriz = [] # lista vazia
+
+    número de linhas e número de colunas = primeira entrada
+    para cada entrada no intervalo [1, número de linhas]: # estrutura de laço que irá se repetir para cada valor no intervalo acrescentando de um em um até o final do intervalo
+        adicionar linha à lista matriz
+
+    # matriz = [[segunda entrada], [terceira entrada], [quarta entrada]...]
     retorne matriz
 
-definir encontrar_pontos(matriz):
+função encontrar pontos(matriz):
+    pontos = {} # dicionário vazio
     
-    pontos = {}
-    numero_de_linhas = tamanho da matriz
-    
-    se numero_de_linhas == 0, então:
-        retorne pontos
-    numero_de_colunas = tamanho da matriz[0]
+    se número de linhas for 0: # matriz nula
+        retorna pontos
 
-    para i no alcance de numero_de_linhas:
-        para j no alcance de numero_de_colunas:
-            valor = matriz[i][j]
-            se valor != "0":
-                pontos[valor] = (i, j)
+    para cada inteiro i no intervalo [1, número de linhas]: 
+        para cada inteiro j no intervalo [1, número de colunas]:
+            se matriz[i,j] diferente de 0:
+                adiciona ao dicionário a letra como chave e suas coordenadas na matriz como valor
+
+    # pontos = {primeira letra: (i0,j0), segunda letra: (i1,j1), terceira letra: (i2,j2)...}
     retorne pontos
 
-definir distancia_manhattan(p1, p2):
+função distância (coordenadas primeira letra, coordenadas segunda letra):
     
-    diferenca_entre_as_linhas = p1[0] - p2[0]
-    se diferenca_entre_as_linhas < 0, então:
-        diferenca_absoluta_de_linhas = -diferenca_entre_as_linhas
+    diferenca entre as linhas = coordenadas i da primeira letra - coordenadas i da segunda letra
+    diferenca entre as colunas = coordenadas j da primeira letra - coordenadas j da segunda letra
+
+    se diferenca entre as linhas < 0, então:
+        diferenca absoluta de linhas = -diferenca entre as linhas
     se não, então:
-        diferenca_absoluta_de_linhas = diferenca_entre_as_linhas
+        diferenca absoluta de linhas = diferenca entre as linhas
 
-    diferenca_entre_as_colunas = p1[1] - p2[1]
-    se diferenca_entre_as_colunas < 0, então:
-        diferenca_absoluta_de_colunas = -diferenca_entre_as_colunas
+    se diferenca entre as colunas < 0, então:
+        diferenca absoluta de colunas = -diferenca entre as colunas
     se não, então:
-        diferenca_absoluta_de_colunas = diferenca_entre_as_colunas
+        diferenca absoluta de colunas = diferenca entre as colunas
 
-    retorne diferenca_absoluta_de_linhas + diferenca_absoluta_de_colunas
+    retorne diferenca absoluta de linhas + diferenca absoluta de colunas
 
 
-definir gerar_permutacoes(lista):
-    se tamanho de lista == 0, então:
-        retorne lista contendo lista vazia
-    se tamanho de lista == 1, então:
-        retorne lista contendo cópia de lista
+função gerar permutações (lista de letras): # Recursiva
 
-    todas_as_permutacões = []
+    # Caso base: se a lista tem 0 ou 1 elemento, só há uma permutação possível
+    se tamanho da lista de letras for menor ou igual a 1, então:
+        retorne a própria lista
     
-    para i no alcance de tamanho de lista:
-        elemento_atual = lista[i]
-        lista_restante = []
-        
-        para j no alcance de tamanho de lista:
-            se j != i, então:
-                adicionar à lista_restante: lista[j]
-        permutações_dos_restantes = gerar_permutacoes(lista_restante)
-        para cada perm em permutações_dos_restantes:
-            nova_permutação = [elemento_atual]
-            para cada item em perm:
-                adicionar à nova_permutação: item
-            adicionar à todas_as_permutacões: nova_permutação
-    
-    retorne todas_as_permutacões
+    resultado = [] # lista vazia
 
-definir resolver_flyfood_forca_bruta():
-    matriz = ler_matriz_flyfood()
-    coordenadas = encontrar_pontos(matriz)
+    para cada inteiro i no intervalo [1, tamanho da lista de letras]:
+
+        elemento fixo = lista de letras [i] # item de posição i na lista de letras
+        resto = todos os elementos da lista antes do elemento de posição i + todos os elementos da lista depois do elemento de posição i
+        # resto = lista com todos os itens da lista de letras - o item de posição i
+
+        para cada item p na lista [chamada da função permutações(resto)] # laço que irá percorrer cada elemento da lista
+            adiciona a lista resultado o item (elemento fixo + p)
+
+    # resultado = [lista com todas as permutações possíveis das letras em lista de letras]
+    retorne resultado
+
+função fly food força bruta:
+    matriz = chamada da função ler matriz()
+    coordenadas = chamada da função encontrar pontos(matriz)
     
-    se 'R' não está em coordenadas, então:
+    se R não está em coordenadas, então:
         retorne "Ponto R não encontrado"
    
-    origem = coordenadas['R']
+    origem = coordenadas de R
 
-    pontos_entrega = []
+    pontos de entrega = [] # lista vazia
     
-    para cada nome em chaves de coordenadas:
-        se nome != 'R', então:
-            adicionar à pontos_entrega: nome
+    para cada letra nas chaves do dicionário coordenadas: # laço que irá percorrer cada chave do dicionário
+        se letra for diferente R, então:
+            adicionar à lista pontos de entrega o item letra
     
-    se tamanho de pontos_entrega == 0, então:
-        retorne ""
+    se tamanho de pontos de entrega for igual a 0, então:
+        retorne nada # pois não há pontos de entrega para serem feitas
 
-    rotas = gerar_permutacoes(pontos_entrega)
-    menor_custo = infinito
-    melhor_rota = []
+    rotas = chamada da função gerar permutacoes(pontos de entrega)
+    menor custo = infinito # na prática não é infinito mas um valor extremamente alto
+    melhor rota = [] # lista vazia
 
-    para cada rota em rotas:
-        custo_atual = 0
-        ponto_anterior = origem
+    para cada rota na lista rotas:
+        custo atual = 0
+        ponto anterior = origem
         
-        para cada nome_ponto em rota:
-            ponto_atual = coordenadas[nome_ponto]
-            custo_atual = custo_atual + distancia_manhattan(ponto_anterior, ponto_atual)
+        para cada letra na lista rota:
+            ponto atual = coordenadas da letra
+            custo atual = custo atual + distância(ponto anterior, ponto atual)
             ponto_anterior = ponto_atual
         
-        custo_atual = custo_atual + distancia_manhattan(ponto_anterior, origem)
+        custo atual = custo atual + distância(ponto anterior, origem)
         
-        se custo_atual < menor_custo, então:
-            menor_custo = custo_atual
-            melhor_rota = rota
+        se custo_atual for menor que menor custo, então:
+            menor custo = custo atual
+            melhor rota = rota
 
-    se encontrou melhor_rota 
-        resultado_str = concatenar elementos de melhor_rota separados por espaço
-        retorne resultado_str
-
-// bloco principal
-
-se programa principal, então:
-    rota = resolver_flyfood_forca_bruta()
-    imprimir rota
+    se a lista melhor rota não estiver vazia, então:
+        retorne uma string com todos os pontos em ordem da lista melhor rota
