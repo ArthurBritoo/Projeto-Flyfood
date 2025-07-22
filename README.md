@@ -23,9 +23,8 @@ Projeto-Flyfood/
 │   ├── forca_bruta.py           # Algoritmo de Força Bruta (Benchmark ótimo)
 │   └── flyfood_main.py          # Arquivo principal com a solução híbrida final
 ├── resultados/                  # Imagens e gráficos dos testes comparativos
-├── relatorio/                   # Relatório acadêmico completo
-├── pseudo_codigo.txt             # Pseudocódigo geral do projeto
-└── README.md                     # Este arquivo
+├── relatorio                    # Relatório acadêmico completo
+└── README.md                    # Este arquivo
 ```
 
 ### 📌 Sobre cada arquivo `.py` da pasta `2VA`:
